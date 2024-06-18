@@ -1,0 +1,53 @@
+{
+  "name": "remove-ai-detection.io",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "^0.0.14",
+    "@ai-sdk/openai": "^0.0.17",
+    "@auth/prisma-adapter": "^2.2.0",
+    "@auth/supabase-adapter": "^1.1.0",
+    "@google/generative-ai": "^0.11.3",
+    "@phosphor-icons/react": "^2.1.5",
+    "@prisma/client": "^5.15.0",
+    "@radix-ui/react-menubar": "^1.0.4",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@supabase/supabase-js": "^2.43.3",
+    "ai": "^3.1.12",
+    "class-variance-authority": "^0.7.0",
+    "elevenlabs": "^0.8.0",
+    "lucide-react": "^0.378.0",
+    "next": "14.2.3",
+    "next-auth": "^5.0.0-beta.19",
+    "openai": "^4.47.2",
+    "postgres": "^3.4.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.2.1",
+    "react-type-animation": "^3.2.0",
+    "sharp": "^0.33.4",
+    "stripe": "^15.10.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "clsx": "^2.1.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "framer-motion": "^11.2.10",
+    "postcss": "^8",
+    "prisma": "^5.15.0",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5"
+  }
+}
