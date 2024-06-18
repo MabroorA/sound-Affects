@@ -46,7 +46,7 @@ export async function reduceUserCredits(): Promise<number | null> {
                 },
             },
         });
-        console.log("FUNCTION")
+        console.log("USER CREDITS REDUCES")
         revalidatePath("/dashboard")
 
         return updatedUserCredits.credits;
@@ -68,7 +68,7 @@ interface SoundGenerationResponse {
     audio_url: string;
 }
 
-export async function generateSounds(inputText: string, durationSeconds: number, promptInfluence: number): Promise<SoundGenerationResponse | null> {
+export async function generateSounds(inputText: string, durationSeconds: number, promptInfluence: number): Promise<any | null> {
 
     try {
 
@@ -89,13 +89,22 @@ export async function generateSounds(inputText: string, durationSeconds: number,
             throw new Error('Failed to generate sound');
         }
 
-        const data: SoundGenerationResponse = await response.json();
+        if (!response.ok) {
+            throw new Error("Failed to generate sound");
+          }
+      
+          const contentType = response.headers.get("Content-Type");
+          if (!contentType || !contentType.startsWith("audio/")) {
+            throw new Error("Expected audio response but received something else");
+          }
+      
+          const buffer = await response.arrayBuffer();
+          const audioData = btoa(
+            new Uint8Array(buffer).reduce((data, byte) => data + String.fromCharCode(byte), "")
+          );
+      
+          return { audio_data: audioData };
 
-        revalidatePath("/dashboard");
-
-
-
-        return data;
     } catch (error) {
         console.error('Error generating sound:', error);
         return null;
