@@ -7,6 +7,10 @@ import Marquee from "@/components/magicui/marquee";
 import MovingCards from "@/components/movingCards";
 import Faq from '@/components/faq';
 import ShineBorder from '@/components/magicui/shine-border';
+import { Button } from '@/components/ui/button';
+import NumberTicker from '@/components/magicui/number-ticker';
+import ShinyButton from '@/components/magicui/shiny-button';
+
 
 
 export default function Home() {
@@ -20,14 +24,27 @@ export default function Home() {
             <div className="mx-auto max-w-max" >
               <ShineBorder color={["#0074E1", "#FF4B5C", "#8DFFCD"]} borderWidth={4} borderRadius={10} duration={10} className="text-center bg-inherit">
                 <div className="text-5xl font-extrabold md:text-6xl">
-                  Breathe life into your videos
+                  Breathe  life into your videos
                 </div>
               </ShineBorder>
             </div>
             <p className="py-3 text-black lg:py-3 lg:pt-8 lg:text-lg sm:py-1 sm:pt-2 ">
             Generate Any Sound from Text, No More Extracting from Clips
             </p>
-            
+            <div className='flex flex-row justify-center gap-3'>
+              
+              <Button>Get Sound Effects</Button>
+              <Button variant="secondary">Try for free</Button>
+              
+            </div>
+            <div className='flex flex-row justify-center p-4'>
+                 Users{" "}
+                <div className='font-black text-md'>
+                  <NumberTicker value={459} />
+                </div>
+                + Have heard their imaginations
+                
+              </div>
           </div>
         </div>
       </div>
