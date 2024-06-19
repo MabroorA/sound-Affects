@@ -8,7 +8,7 @@ function MovingCards() {
         {/* // Cards */}
         <div className='flex flex-row gap-6 '>
             {/* CARD */}
-            <Marquee pauseOnHover  className=''>
+            
             <div className='h-fit w-fit'>
                 <div className=' rounded-3xl h-36 w-36 bg-slate-400'>
 
@@ -59,7 +59,6 @@ function MovingCards() {
                     <div className='text-base text-black max-w-36'>A man screaming</div>
                 </div>
             </div>
-            </Marquee>
         </div>
 
     </>
