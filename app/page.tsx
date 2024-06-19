@@ -19,12 +19,12 @@ export default function Home() {
           <div className="text-center text-black ">
             <div className="mx-auto max-w-max" >
               <ShineBorder color={["#0074E1", "#FF4B5C", "#8DFFCD"]} borderWidth={4} borderRadius={10} duration={10} className="text-center bg-inherit">
-                <div className="text-5xl font-extrabold ">
+                <div className="text-5xl font-extrabold md:text-6xl">
                   Breathe life into your videos
                 </div>
               </ShineBorder>
             </div>
-            <p className="py-3 text-gray-500 lg:py-3 lg:pt-8 lg:text-lg sm:py-1 sm:pt-2 ">
+            <p className="py-3 text-black lg:py-3 lg:pt-8 lg:text-lg sm:py-1 sm:pt-2 ">
             Generate Any Sound from Text, No More Extracting from Clips
             </p>
             
@@ -41,14 +41,15 @@ export default function Home() {
       </Marquee>
 
       <div className="py-20 text-center">
-        <div className="text-3xl font-bold">
+        <div className="text-3xl font-bold md:text-4xl">
         The Sound Effects You Imagine, Delivered.
         </div>
-        <p>
+        <p className='py-3 text-black'>
           End the search for the right sound. Describe it, and we’ll create it.
         </p>
-        
-        <Image src={vid} alt="demo picture" className="p-3 rounded-3xl"/>
+        <div className='flex justify-center'>
+             <Image src={vid} alt="demo picture" className="p-3 rounded-3xl"/>
+        </div>
       </div>
       
       <Faq/>

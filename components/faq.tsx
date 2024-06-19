@@ -4,9 +4,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './
 
 function Faq() {
   return (
-    <div>
+    <div className='flex justify-center'>
 
-    <div className="flex flex-col justify-center text-left "> 
+    <div className="flex flex-col justify-center text-left  "> 
         {/* FAQ */}
         <div className="mb-4 text-3xl font-medium">Frequently asked questions</div>
         <Accordion type="single" collapsible className="w-full max-w-md">
