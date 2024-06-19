@@ -5,6 +5,7 @@ import React, { useRef } from 'react'
 
 import stadium from "../public/stadium.png"
 import { Button } from './ui/button';
+import { PlayCircle } from '@phosphor-icons/react/dist/ssr';
 
 
 function MovingCards() {
@@ -28,62 +29,120 @@ function MovingCards() {
                     <Image 
                         src={stadium} 
                         alt='picture' 
-                        className='w-full h-full rounded-3xl cursor-pointer' 
+                        className='w-full h-full cursor-pointer rounded-3xl' 
                         onClick={handlePlayAudio} 
                     />
                     <Button 
                         onClick={handlePlayAudio} 
-                        className='absolute inset-0 m-auto flex items-center justify-center bg-white  text-black rounded-3xl w-fit hover:bg-black hover:text-white'
+                        className='absolute inset-0 flex items-center justify-center m-auto bg-transparent rounded-3xl w-fit hover:bg-transparent '
                         >
-                        Play
+                        <PlayCircle size={52} color="#eeecec" weight="fill" className=' hover:text-black' />
                     </Button>
                 </div>
                 <div className='pt-2'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
                     <div className='text-base text-black max-w-36'>Stadium sound</div>
                 </div>
+                {/* Stadium audio */}
                 <audio  ref={audioRef} src='/birds_chirping.mp3' />
             </div>
             {/* CARD */}
+
             <div className='h-fit w-fit'>
-                <div className=' rounded-3xl h-36 w-36 md:h-64 md:w-64'>
-                    <Image src={stadium} alt='picture' className='w-full h-full rounded-3xl'/>                    
+                <div className='relative rounded-3xl h-36 w-36 md:h-64 md:w-64'>
+                    <Image 
+                        src={stadium} 
+                        alt='picture' 
+                        className='w-full h-full cursor-pointer rounded-3xl' 
+                        onClick={handlePlayAudio} 
+                    />
+                    <Button 
+                        onClick={handlePlayAudio} 
+                        className='absolute inset-0 flex items-center justify-center m-auto bg-transparent rounded-3xl w-fit hover:bg-transparent '
+                        >
+                        <PlayCircle size={52} color="#eeecec" weight="fill" className=' hover:text-black' />
+                    </Button>
                 </div>
                 <div className='pt-2'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='text-base text-black max-w-36'>Glass clicking in a disco party</div>
+                    <div className='text-base text-black max-w-36'>Stadium sound</div>
                 </div>
+                {/* Stadium audio */}
+                <audio  ref={audioRef} src='/birds_chirping.mp3' />
             </div>
 
             {/* CARD */}
             <div className='h-fit w-fit'>
-                <div className=' rounded-3xl h-36 w-36 md:h-64 md:w-64'>
-                <Image src={stadium} alt='picture' className='w-full h-full rounded-3xl'/>
+                <div className='relative rounded-3xl h-36 w-36 md:h-64 md:w-64'>
+                    <Image 
+                        src={stadium} 
+                        alt='picture' 
+                        className='w-full h-full cursor-pointer rounded-3xl' 
+                        onClick={handlePlayAudio} 
+                    />
+                    <Button 
+                        onClick={handlePlayAudio} 
+                        className='absolute inset-0 flex items-center justify-center m-auto bg-transparent rounded-3xl w-fit hover:bg-transparent '
+                        >
+                        <PlayCircle size={52} color="#eeecec" weight="fill" className=' hover:text-black' />
+                    </Button>
                 </div>
                 <div className='pt-2'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='text-base text-black max-w-36'>A man screaming then falling down stairs</div>
+                    <div className='text-base text-black max-w-36'>Stadium sound</div>
                 </div>
+                {/* Stadium audio */}
+                <audio  ref={audioRef} src='/birds_chirping.mp3' />
             </div>
+
             {/* CARD */}
+
             <div className='h-fit w-fit'>
-                <div className=' rounded-3xl h-36 w-36 md:h-64 md:w-64'>
-                 <Image src={stadium} alt='picture' className='w-full h-full rounded-3xl'/>
+                <div className='relative rounded-3xl h-36 w-36 md:h-64 md:w-64'>
+                    <Image 
+                        src={stadium} 
+                        alt='picture' 
+                        className='w-full h-full cursor-pointer rounded-3xl' 
+                        onClick={handlePlayAudio} 
+                    />
+                    <Button 
+                        onClick={handlePlayAudio} 
+                        className='absolute inset-0 flex items-center justify-center m-auto bg-transparent rounded-3xl w-fit hover:bg-transparent '
+                        >
+                        <PlayCircle size={52} color="#eeecec" weight="fill" className=' hover:text-black' />
+                    </Button>
                 </div>
                 <div className='pt-2'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='text-base text-black max-w-36'>A man screaming then falling down stairs</div>
+                    <div className='text-base text-black max-w-36'>Stadium sound</div>
                 </div>
+                {/* Stadium audio */}
+                <audio  ref={audioRef} src='/birds_chirping.mp3' />
             </div>
+
             {/* CARD */}
+            
             <div className='h-fit w-fit'>
-                <div className=' rounded-3xl h-36 w-36 md:h-64 md:w-64'>
-                 <Image src={stadium} alt='picture' className='w-full h-full rounded-3xl'/>
+                <div className='relative rounded-3xl h-36 w-36 md:h-64 md:w-64'>
+                    <Image 
+                        src={stadium} 
+                        alt='picture' 
+                        className='w-full h-full cursor-pointer rounded-3xl' 
+                        onClick={handlePlayAudio} 
+                    />
+                    <Button 
+                        onClick={handlePlayAudio} 
+                        className='absolute inset-0 flex items-center justify-center m-auto bg-transparent rounded-3xl w-fit hover:bg-transparent '
+                        >
+                        <PlayCircle size={52} color="#eeecec" weight="fill" className=' hover:text-black' />
+                    </Button>
                 </div>
                 <div className='pt-2'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='text-base text-black max-w-36'>A man screaming</div>
+                    <div className='text-base text-black max-w-36'>Stadium sound</div>
                 </div>
+                {/* Stadium audio */}
+                <audio  ref={audioRef} src='/birds_chirping.mp3' />
             </div>
         </div>
 
