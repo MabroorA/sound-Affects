@@ -86,10 +86,6 @@ export async function generateSounds(inputText: string, durationSeconds: number,
         });
 
         if (!response.ok) {
-            throw new Error('Failed to generate sound');
-        }
-
-        if (!response.ok) {
             throw new Error("Failed to generate sound");
           }
       
