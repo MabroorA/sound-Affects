@@ -47,6 +47,7 @@ export default function Home() {
         <p>
           End the search for the right sound. Describe it, and we’ll create it.
         </p>
+        
         <Image src={vid} alt="demo picture" className="p-3 rounded-3xl"/>
       </div>
       

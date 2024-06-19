@@ -1,4 +1,7 @@
+import Image from 'next/image'
 import React from 'react'
+
+import stadium from "../public/stadium.png"
 
 
 function MovingCards() {
@@ -10,18 +13,18 @@ function MovingCards() {
             {/* CARD */}
             
             <div className='h-fit w-fit'>
-                <div className=' rounded-3xl h-36 w-36 bg-slate-400'>
-
+                <div className=' rounded-3xl h-36 w-36'>
+                    <Image src={stadium} alt='picture' className='w-full h-full rounded-3xl'/>
                 </div>
                 <div className='pt-2'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='text-base text-black max-w-36'>Shotgun sound</div>
+                    <div className='text-base text-black max-w-36'>Stadium sound</div>
                 </div>
             </div>
             {/* CARD */}
             <div className='h-fit w-fit'>
-                <div className=' rounded-3xl h-36 w-36 bg-slate-400'>
-
+                <div className=' rounded-3xl h-36 w-36'>
+                    <Image src={stadium} alt='picture' className='w-full h-full rounded-3xl'/>                    
                 </div>
                 <div className='pt-2'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
@@ -31,8 +34,8 @@ function MovingCards() {
 
             {/* CARD */}
             <div className='h-fit w-fit'>
-                <div className=' rounded-3xl h-36 w-36 bg-slate-400'>
-
+                <div className=' rounded-3xl h-36 w-36'>
+                <Image src={stadium} alt='picture' className='w-full h-full rounded-3xl'/>
                 </div>
                 <div className='pt-2'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
@@ -41,8 +44,8 @@ function MovingCards() {
             </div>
             {/* CARD */}
             <div className='h-fit w-fit'>
-                <div className=' rounded-3xl h-36 w-36 bg-slate-400'>
-
+                <div className=' rounded-3xl h-36 w-36'>
+                 <Image src={stadium} alt='picture' className='w-full h-full rounded-3xl'/>
                 </div>
                 <div className='pt-2'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
@@ -51,8 +54,8 @@ function MovingCards() {
             </div>
             {/* CARD */}
             <div className='h-fit w-fit'>
-                <div className=' rounded-3xl h-36 w-36 bg-slate-400'>
-
+                <div className=' rounded-3xl h-36 w-36'>
+                 <Image src={stadium} alt='picture' className='w-full h-full rounded-3xl'/>
                 </div>
                 <div className='pt-2'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
