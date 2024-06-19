@@ -6,6 +6,7 @@ import vid from "../public/demo-vid-ezgif.com-video-to-gif-converter.gif"
 import Marquee from "@/components/magicui/marquee";
 import MovingCards from "@/components/movingCards";
 import Faq from '@/components/faq';
+import ShineBorder from '@/components/magicui/shine-border';
 
 
 export default function Home() {
@@ -15,11 +16,13 @@ export default function Home() {
       
       <div className="flex flex-col justify-center py-20 md:flex-col lg:justify-center sm:flex-col lg:py-20 ">
         <div className="flex flex-col justify-center ">
-          <div className="text-center text-black text-middle ">
-            
-            
-            <div className="text-5xl font-extrabold ">
-              Breathe life into your videos
+          <div className="text-center text-black ">
+            <div className="mx-auto max-w-max" >
+              <ShineBorder color={["#0074E1", "#FF4B5C", "#8DFFCD"]} borderWidth={4} borderRadius={10} duration={10} className="text-center bg-inherit">
+                <div className="text-5xl font-extrabold ">
+                  Breathe life into your videos
+                </div>
+              </ShineBorder>
             </div>
             <p className="py-3 text-gray-500 lg:py-3 lg:pt-8 lg:text-lg sm:py-1 sm:pt-2 ">
             Generate Any Sound from Text, No More Extracting from Clips
