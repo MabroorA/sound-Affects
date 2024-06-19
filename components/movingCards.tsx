@@ -25,7 +25,7 @@ function MovingCards() {
             {/* CARD */}
             
             <div className='h-fit w-fit'>
-                <div className='relative rounded-3xl h-36 w-36 md:h-64 md:w-64'>
+                <div className='relative rounded-3xl h-36 w-36 md:h-[250px] md:w-[250px]'>
                     <Image 
                         src={stadium} 
                         alt='picture' 
@@ -36,7 +36,7 @@ function MovingCards() {
                         onClick={handlePlayAudio} 
                         className='absolute inset-0 flex items-center justify-center m-auto bg-transparent rounded-3xl w-fit hover:bg-transparent '
                         >
-                        <PlayCircle size={52} color="#eeecec" weight="fill" className=' hover:text-black' />
+                        <PlayCircle size={80} color="#eeecec" weight="fill" className=' hover:text-black' />
                     </Button>
                 </div>
                 <div className='pt-2'>
@@ -49,7 +49,7 @@ function MovingCards() {
             {/* CARD */}
 
             <div className='h-fit w-fit'>
-                <div className='relative rounded-3xl h-36 w-36 md:h-64 md:w-64'>
+                <div className='relative rounded-3xl h-36 w-36 md:h-[250px] md:w-[250px]'>
                     <Image 
                         src={stadium} 
                         alt='picture' 
@@ -60,7 +60,7 @@ function MovingCards() {
                         onClick={handlePlayAudio} 
                         className='absolute inset-0 flex items-center justify-center m-auto bg-transparent rounded-3xl w-fit hover:bg-transparent '
                         >
-                        <PlayCircle size={52} color="#eeecec" weight="fill" className=' hover:text-black' />
+                        <PlayCircle size={80} color="#eeecec" weight="fill" className=' hover:text-black' />
                     </Button>
                 </div>
                 <div className='pt-2'>
@@ -73,7 +73,7 @@ function MovingCards() {
 
             {/* CARD */}
             <div className='h-fit w-fit'>
-                <div className='relative rounded-3xl h-36 w-36 md:h-64 md:w-64'>
+                <div className='relative rounded-3xl h-36 w-36 md:h-[250px] md:w-[250px]'>
                     <Image 
                         src={stadium} 
                         alt='picture' 
@@ -84,7 +84,7 @@ function MovingCards() {
                         onClick={handlePlayAudio} 
                         className='absolute inset-0 flex items-center justify-center m-auto bg-transparent rounded-3xl w-fit hover:bg-transparent '
                         >
-                        <PlayCircle size={52} color="#eeecec" weight="fill" className=' hover:text-black' />
+                        <PlayCircle size={80} color="#eeecec" weight="fill" className=' hover:text-black' />
                     </Button>
                 </div>
                 <div className='pt-2'>
@@ -98,7 +98,7 @@ function MovingCards() {
             {/* CARD */}
 
             <div className='h-fit w-fit'>
-                <div className='relative rounded-3xl h-36 w-36 md:h-64 md:w-64'>
+                <div className='relative rounded-3xl h-36 w-36 md:h-[250px] md:w-[250px]'>
                     <Image 
                         src={stadium} 
                         alt='picture' 
@@ -109,7 +109,7 @@ function MovingCards() {
                         onClick={handlePlayAudio} 
                         className='absolute inset-0 flex items-center justify-center m-auto bg-transparent rounded-3xl w-fit hover:bg-transparent '
                         >
-                        <PlayCircle size={52} color="#eeecec" weight="fill" className=' hover:text-black' />
+                        <PlayCircle size={80} color="#eeecec" weight="fill" className=' hover:text-black' />
                     </Button>
                 </div>
                 <div className='pt-2'>
@@ -123,7 +123,7 @@ function MovingCards() {
             {/* CARD */}
             
             <div className='h-fit w-fit'>
-                <div className='relative rounded-3xl h-36 w-36 md:h-64 md:w-64'>
+                <div className='relative rounded-3xl h-36 w-36 md:h-[250px] md:w-[250px]'>
                     <Image 
                         src={stadium} 
                         alt='picture' 
@@ -134,7 +134,7 @@ function MovingCards() {
                         onClick={handlePlayAudio} 
                         className='absolute inset-0 flex items-center justify-center m-auto bg-transparent rounded-3xl w-fit hover:bg-transparent '
                         >
-                        <PlayCircle size={52} color="#eeecec" weight="fill" className=' hover:text-black' />
+                        <PlayCircle size={80} color="#eeecec" weight="fill" className=' hover:text-black' />
                     </Button>
                 </div>
                 <div className='pt-2'>
