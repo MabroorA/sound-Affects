@@ -9,7 +9,7 @@ import Faq from '@/components/faq';
 import ShineBorder from '@/components/magicui/shine-border';
 import { Button } from '@/components/ui/button';
 import NumberTicker from '@/components/magicui/number-ticker';
-import ShinyButton from '@/components/magicui/shiny-button';
+import Footer from '@/components/footer';
 
 
 
@@ -70,6 +70,7 @@ export default function Home() {
       </div>
       
       <Faq/>
+      <Footer/>
 
     </>
   );
