@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { generateSounds, getUserCredits, reduceUserCredits } from '../actions';
 import { Button } from '@/components/ui/button';
+import RetroGrid from '@/components/magicui/retro-grid';
 
 
 const Dashboard = () => {
@@ -60,8 +61,9 @@ const Dashboard = () => {
 
         </div>
       )}
+      <RetroGrid />
     </div>
-  
+    
     );
 };
 
