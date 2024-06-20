@@ -33,6 +33,9 @@ export default function NavBar({
           <RiMenu5Fill size={35} className="text-teal-700 cursor-pointer " onClick={toggleMenu} />
         </div>
         <div className={`flex flex-col md:space-x-10 md:flex-row md:items-center absolute md:static top-full right-0  md:bg-transparent z-50 md:z-auto ${isMenuOpen ? 'block' : 'hidden'} md:flex`}>
+          <Link className=" hover:text-teal-700" href='/history'>
+            History
+          </Link>
           <div className=" hover:text-teal-700" >
             <DashboardLink session={session} />
           </div>
