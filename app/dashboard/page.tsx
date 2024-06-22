@@ -37,16 +37,24 @@ const Dashboard = () => {
         audioPlayerRef.current.src = audioSrc;
       }
     }, [audioData]);
+    
 
     return (
       <div className="flex flex-col items-center justify-center p-4 min-h-80">
+
       <input
+        type="file"
+
+        className="w-full max-w-md p-2 mb-4 text-white border border-black rounded reground bg-slate-700"
+      />
+
+      {/* <input
         type="text"
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
         placeholder="Enter text for sound generation"
         className="w-full max-w-md p-2 mb-4 border border-gray-300 rounded"
-      />
+      /> */}
       <Button onClick={handleGenerateSound}>Generate Sound</Button>
       {audioData && (
         <div className="w-full max-w-md mt-6 text-center">

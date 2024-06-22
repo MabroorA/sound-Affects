@@ -26,7 +26,7 @@ export default function NavBar({
   return (
     <nav className="relative flex flex-row justify-between p-3 py-5 mx-auto text-lg text-black max-w-7xl ">
       <Link href='/' className="font-extrabold text-1xl md:text-2xl ">
-        SOUND EFFECTS
+        IMAGE EFFECTS
       </Link>
       <div className="flex flex-col items-center md:flex-row">
         <div className="md:hidden">
