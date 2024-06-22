@@ -33,8 +33,8 @@ export default function Home() {
             </p>
             <div className='flex flex-row justify-center gap-3'>
               
-              <Button>Get Sound Effects</Button>
-              <Button variant="secondary">Try for free</Button>
+              <Button className='font-extrabold '>Generate for free</Button>
+             
               
             </div>
             <div className='flex flex-row justify-center p-4'>
