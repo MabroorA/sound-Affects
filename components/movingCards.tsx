@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 
 import bird from "../public/birds.jpg"
 import car from "../public/car.jpg"
@@ -17,7 +17,6 @@ import { PlayCircle } from '@phosphor-icons/react/dist/ssr';
 
 function MovingCards() {
 
-    const stadiumAudioRef = useRef<HTMLAudioElement | null>(null);
     const birdAudioRef = useRef<HTMLAudioElement | null>(null);
     const carAudioRef = useRef<HTMLAudioElement | null>(null);
     const catAudioRef = useRef<HTMLAudioElement | null>(null);
@@ -25,7 +24,8 @@ function MovingCards() {
     const clockAudioRef = useRef<HTMLAudioElement | null>(null);
     const robotAudioRef = useRef<HTMLAudioElement | null>(null);
 
-    const handlePlayStadiumAudio = () => {
+
+    const handlePlayBirdAudio = () => {
         if (birdAudioRef.current) {
             birdAudioRef.current.play();
         }
@@ -70,18 +70,23 @@ function MovingCards() {
                         src={bird} 
                         alt='picture' 
                         className='w-full h-full cursor-pointer rounded-3xl' 
-                        onClick={handlePlayStadiumAudio} 
+                        onClick={handlePlayBirdAudio} 
                     />
                     <Button 
-                        onClick={handlePlayStadiumAudio} 
-                        className='absolute inset-0 flex items-center justify-center m-auto bg-transparent rounded-3xl w-fit hover:bg-transparent '
-                        >
-                        <PlayCircle size={40} color="#eeecec" weight="fill" className='md:size-[80px] hover:text-black' />
+                        onClick={handlePlayBirdAudio} 
+                        className='absolute inset-0 flex items-center justify-center m-auto bg-transparent rounded-3xl w-fit hover:bg-transparent'
+                    >
+                        <PlayCircle 
+                            size={40} 
+                            color="#eeecec" 
+                            weight="fill" 
+                            className='md:size-[80px] hover:text-black' 
+                        />
                     </Button>
                 </div>
-                <div className='pt-2'>
+                <div className='pt-2 w-36 md:w-[250px]'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='text-base text-black max-w-36'>Birds chirping</div>
+                    <div className='max-w-full text-base text-black break-words'>Birds chirping</div>
                 </div>
                 {/* Birds audio */}
                 <audio  ref={birdAudioRef} src='/birds_chirping.mp3' />
@@ -109,32 +114,8 @@ function MovingCards() {
                 </div>
                 {/* Kitten audio */}
                 <audio  ref={catAudioRef} src='/kitten-moewing.mp3' />
-            </div>
-            {/* CARD */}
-            
-            <div className='h-fit w-fit'>
-                <div className='relative rounded-3xl h-36 w-36 md:h-[250px] md:w-[250px]'>
-                    <Image 
-                        src={bird} 
-                        alt='picture' 
-                        className='w-full h-full cursor-pointer rounded-3xl' 
-                        onClick={handlePlayStadiumAudio} 
-                    />
-                    <Button 
-                        onClick={handlePlayStadiumAudio} 
-                        className='absolute inset-0 flex items-center justify-center m-auto bg-transparent rounded-3xl w-fit hover:bg-transparent '
-                        >
-                        <PlayCircle size={40} color="#eeecec" weight="fill" className='md:size-[80px] hover:text-black' />
-                    </Button>
-                </div>
-                <div className='pt-2'>
-                    <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='text-base text-black max-w-36'>Birds chirping</div>
-                </div>
-                {/* Stadium audio */}
-                <audio  ref={birdAudioRef} src='/birds_chirping.mp3' />
-            </div>
-            {/* CARD */}
+            </div>     
+            {/* Car CARD */}
 
             <div className='h-fit w-fit'>
                 <div className='relative rounded-3xl h-36 w-36 md:h-[250px] md:w-[250px]'>
@@ -151,15 +132,15 @@ function MovingCards() {
                         <PlayCircle size={40} color="#eeecec" weight="fill" className='md:size-[80px] hover:text-black' />
                     </Button>
                 </div>
-                <div className='pt-2'>
+                <div className='pt-2 w-36 md:w-[250px]'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='text-base text-black max-w-36'>A car whizzing by</div>
+                    <div className='max-w-full text-base text-black break-words'>A car whizzing by</div>
                 </div>
                 {/* Car whizzing audio */}
                 <audio  ref={carAudioRef} src='/a_car_whizzing_by.mp3' />
             </div>
 
-            {/* CARD */}
+            {/* Horse CARD */}
             <div className='h-fit w-fit'>
                 <div className='relative rounded-3xl h-36 w-36 md:h-[250px] md:w-[250px]'>
                     <Image 
@@ -175,15 +156,15 @@ function MovingCards() {
                         <PlayCircle size={40} color="#eeecec" weight="fill" className='md:size-[80px] hover:text-black' />
                     </Button>
                 </div>
-                <div className='pt-2'>
+                <div className='pt-2 w-36 md:w-[250px]'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='text-base text-black max-w-36'>Horse running</div>
+                    <div className='max-w-full text-base text-black break-words'>Horse running</div>
                 </div>
                 {/* Horse running audio */}
                 <audio  ref={horseAudioRef} src='/horse.mp3' />
             </div>
 
-            {/* CARD */}
+            {/* Robot CARD */}
 
             <div className='h-fit w-fit'>
                 <div className='relative rounded-3xl h-36 w-36 md:h-[250px] md:w-[250px]'>
@@ -200,15 +181,15 @@ function MovingCards() {
                         <PlayCircle size={40} color="#eeecec" weight="fill" className='md:size-[80px] hover:text-black' />
                     </Button>
                 </div>
-                <div className='pt-2'>
+                <div className='pt-2 w-36 md:w-[250px]'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='text-base text-black max-w-36'>Robot saying meow</div>
+                    <div className='max-w-full text-base text-black break-words'>Robot saying meow</div>
                 </div>
                 {/* Robot saying meow audio */}
                 <audio  ref={robotAudioRef} src='/robot_saying_meow.mp3' />
             </div>
 
-            {/* CARD */}
+            {/* Clock CARD */}
             
             <div className='h-fit w-fit'>
                 <div className='relative rounded-3xl h-36 w-36 md:h-[250px] md:w-[250px]'>
@@ -225,9 +206,9 @@ function MovingCards() {
                         <PlayCircle size={40} color="#eeecec" weight="fill" className='md:size-[80px] hover:text-black' />
                     </Button>
                 </div>
-                <div className='pt-2'>
+                <div className='pt-2 w-36 md:w-[250px]'>
                     <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='text-base text-black max-w-36'>Clock ticking slowly</div>
+                    <div className='max-w-full text-base text-black break-words'>Clock ticking slowly </div>
                 </div>
                 {/* Clock ticking slowly audio */}
                 <audio  ref={clockAudioRef} src='/clock_slow_ticktok.mp3' />

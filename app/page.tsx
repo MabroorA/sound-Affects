@@ -37,14 +37,14 @@ export default function Home() {
              
               
             </div>
-            <div className='flex flex-row justify-center p-4'>
+            {/* <div className='flex flex-row justify-center p-4'>
                  Users{" "}
                 <div className='font-black text-md'>
                   <NumberTicker value={459} />
                 </div>
                 + Have heard their imaginations
                 
-              </div>
+            </div> */}
           </div>
         </div>
       </div>
