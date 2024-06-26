@@ -1,8 +1,9 @@
 "use client";
-import { useEffect, useRef, useState } from 'react';
-import { generateSounds, getUserCredits, reduceUserCredits } from '../actions';
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
+import { generateSounds } from '../actions';
 import { Button } from '@/components/ui/button';
 import RetroGrid from '@/components/magicui/retro-grid';
+import { error } from 'console';
 
 
 const Dashboard = () => {
@@ -10,6 +11,14 @@ const Dashboard = () => {
     const [inputText, setInputText] = useState<string>('');
     const [audioData, setAudioData] = useState<string | null>(null);
     const audioPlayerRef = useRef<HTMLAudioElement | null>(null);
+    const [image,setImage] = useState<string>("");
+    const [OpenAiResponse,setOpenAiResponse] = useState<string>("");
+
+
+    const [imageUrl, setImageUrl] = useState('');
+    const [description, setDescription] = useState('');
+    const [loading, setLoading] = useState(false);
+
 
     const handleGenerateSound = async () => {
       try {
@@ -38,15 +47,91 @@ const Dashboard = () => {
       }
     }, [audioData]);
     
+    async function handleSubmit(event:FormEvent<HTMLFormElement>){
+      
+      event.preventDefault();
+      setLoading(true);
+      setDescription('');
+      if (image === ""){
+        alert("Upload an image")
+        return
+      }
+
+
+      try {
+        const response = await fetch('/api/analyseImage', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ image }),
+        });
+  
+        const data = await response.json();
+        setDescription(data.description);
+      } catch (error) {
+        console.error('Error:', error);
+        setDescription('Failed to get description.');
+      } finally {
+        setLoading(false);
+      }
+      
+    }
+
+  function handleFileChange(e: ChangeEvent<HTMLInputElement>) {
+    if (e.target.files === null){
+      window.alert("No files selected")
+      return;
+    }
+    const file = e?.target.files[0]
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      if (typeof reader.result === "string"){
+        console.log(reader.result)
+        setImage(reader.result )
+      }
+
+      
+    }
+    
+    reader.onerror = (error) =>{
+      console.log("reader error")
+    }
+  }
 
     return (
       <div className="flex flex-col items-center justify-center p-4 min-h-80">
 
-      <input
-        type="file"
 
-        className="w-full max-w-md p-2 mb-4 text-white border border-black rounded reground bg-slate-700"
-      />
+
+        {image !== "" ? 
+            <div className='mb-4 overflow-hidden'>
+              <img
+              src={image}
+              className='w-full object-contain max-h-72'
+              />
+            </div>
+          :
+            <div>
+              <p>Once you upload an image it will be displayed here</p>
+            </div>
+        }
+      <form onSubmit={ handleSubmit}>
+        <input
+          type="file"
+
+          className="w-full max-w-md p-2 mb-4 text-white border border-black rounded reground bg-slate-700"
+          onChange={handleFileChange}
+        />
+        <Button type="submit" disabled={loading}>
+          {loading ? 'Generating...' : 'Generate Description'}
+        </Button>
+      </form>
+      {description && <p>Description: {description}</p>}
+
+
 
       {/* <input
         type="text"
@@ -55,7 +140,8 @@ const Dashboard = () => {
         placeholder="Enter text for sound generation"
         className="w-full max-w-md p-2 mb-4 border border-gray-300 rounded"
       /> */}
-      <Button onClick={handleGenerateSound}>Generate Sound</Button>
+      
+      {/* <Button onClick={handleGenerateSound}>Generate Sound</Button>
       {audioData && (
         <div className="w-full max-w-md mt-6 text-center">
           <h2 className="mb-4 text-xl font-semibold">Generated Sound</h2>
@@ -68,7 +154,7 @@ const Dashboard = () => {
             </audio>
 
         </div>
-      )}
+      )} */}
       <RetroGrid />
     </div>
     
