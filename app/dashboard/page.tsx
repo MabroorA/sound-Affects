@@ -3,7 +3,7 @@ import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 import { generateSounds } from '../actions';
 import { Button } from '@/components/ui/button';
 import RetroGrid from '@/components/magicui/retro-grid';
-import { error } from 'console';
+
 
 
 const Dashboard = () => {
@@ -26,7 +26,7 @@ const Dashboard = () => {
         const promptInfluence = 0.5; // Adjust based on your needs
   
         const response = await generateSounds(
-          inputText,
+          description,
           durationSeconds,
           promptInfluence
         );
@@ -141,7 +141,7 @@ const Dashboard = () => {
         className="w-full max-w-md p-2 mb-4 border border-gray-300 rounded"
       /> */}
       
-      {/* <Button onClick={handleGenerateSound}>Generate Sound</Button>
+      <Button onClick={handleGenerateSound}>Generate Sound</Button>
       {audioData && (
         <div className="w-full max-w-md mt-6 text-center">
           <h2 className="mb-4 text-xl font-semibold">Generated Sound</h2>
@@ -154,7 +154,7 @@ const Dashboard = () => {
             </audio>
 
         </div>
-      )} */}
+      )}
       <RetroGrid />
     </div>
     
