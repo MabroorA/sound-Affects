@@ -10,6 +10,7 @@ import ShineBorder from '@/components/magicui/shine-border';
 import { Button } from '@/components/ui/button';
 import NumberTicker from '@/components/magicui/number-ticker';
 import Footer from '@/components/footer';
+import Pricing from '@/components/pricing';
 
 
 
@@ -28,7 +29,7 @@ export default function Home() {
                 </div>
               </ShineBorder>
             </div>
-            <p className="py-3 text-black lg:py-3 lg:pt-8 lg:text-lg sm:py-1 sm:pt-2 ">
+            <p className="py-3 text-lg text-black lg:py-3 lg:pt-8 sm:py-1 sm:pt-2 ">
             Generate Sound Effects from images, No More Extracting from Clips
             </p>
             <div className='flex flex-row justify-center gap-3'>
@@ -64,10 +65,23 @@ export default function Home() {
         <p className='py-3 text-black'>
           End the search for the right sound. Show it, and we’ll create it.
         </p>
+        <p>demo ⌄</p>
         <div className='flex justify-center'>
              <Image src={vid} alt="demo picture" className="p-3 rounded-3xl"/>
         </div>
       </div>
+
+
+      {/* FEATURES */}
+
+      <div className="py-16 text-center">
+        <div className="text-3xl font-bold md:text-4xl">
+        FEATURES
+        </div>
+
+      </div>
+
+      <Pricing/>
       
       <Faq/>
       <Footer/>

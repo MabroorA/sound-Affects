@@ -84,10 +84,6 @@ function MovingCards() {
                         />
                     </Button>
                 </div>
-                <div className='pt-2 w-36 md:w-[250px]'>
-                    <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='max-w-full text-base text-black break-words'>Birds chirping</div>
-                </div>
                 {/* Birds audio */}
                 <audio  ref={birdAudioRef} src='/birds_chirping.mp3' />
             </div>
@@ -107,10 +103,6 @@ function MovingCards() {
                         >
                         <PlayCircle size={40} color="#eeecec" weight="fill" className='md:size-[80px] hover:text-black' />
                     </Button>
-                </div>
-                <div className='pt-2'>
-                    <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='text-base text-black max-w-36'>Kitten moewing</div>
                 </div>
                 {/* Kitten audio */}
                 <audio  ref={catAudioRef} src='/kitten-moewing.mp3' />
@@ -132,10 +124,6 @@ function MovingCards() {
                         <PlayCircle size={40} color="#eeecec" weight="fill" className='md:size-[80px] hover:text-black' />
                     </Button>
                 </div>
-                <div className='pt-2 w-36 md:w-[250px]'>
-                    <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='max-w-full text-base text-black break-words'>A car whizzing by</div>
-                </div>
                 {/* Car whizzing audio */}
                 <audio  ref={carAudioRef} src='/a_car_whizzing_by.mp3' />
             </div>
@@ -155,10 +143,6 @@ function MovingCards() {
                         >
                         <PlayCircle size={40} color="#eeecec" weight="fill" className='md:size-[80px] hover:text-black' />
                     </Button>
-                </div>
-                <div className='pt-2 w-36 md:w-[250px]'>
-                    <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='max-w-full text-base text-black break-words'>Horse running</div>
                 </div>
                 {/* Horse running audio */}
                 <audio  ref={horseAudioRef} src='/horse.mp3' />
@@ -181,10 +165,6 @@ function MovingCards() {
                         <PlayCircle size={40} color="#eeecec" weight="fill" className='md:size-[80px] hover:text-black' />
                     </Button>
                 </div>
-                <div className='pt-2 w-36 md:w-[250px]'>
-                    <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='max-w-full text-base text-black break-words'>Robot saying meow</div>
-                </div>
                 {/* Robot saying meow audio */}
                 <audio  ref={robotAudioRef} src='/robot_saying_meow.mp3' />
             </div>
@@ -205,10 +185,6 @@ function MovingCards() {
                         >
                         <PlayCircle size={40} color="#eeecec" weight="fill" className='md:size-[80px] hover:text-black' />
                     </Button>
-                </div>
-                <div className='pt-2 w-36 md:w-[250px]'>
-                    <div  className='text-sm text-gray-600 '>Prompt</div>
-                    <div className='max-w-full text-base text-black break-words'>Clock ticking slowly </div>
                 </div>
                 {/* Clock ticking slowly audio */}
                 <audio  ref={clockAudioRef} src='/clock_slow_ticktok.mp3' />
