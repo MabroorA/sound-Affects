@@ -1,7 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Image to Sound Effects 
 
-## Getting Started
+Transform your images into unique sound effects with ease. This application saves you precious time and helps you find the perfect sound for your needs.
 
+## Features
+
+- **User Authentication**: Secure login and registration to protect your data.
+- **Stripe Payments**: Easy and secure payment processing.
+- **Minimal Viable Product (MVP)**: A functional version of the product to demonstrate core features.
+
+  
 First, run the development server:
 
 ```bash
