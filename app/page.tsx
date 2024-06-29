@@ -80,9 +80,9 @@ export default function Home() {
         </div>
 
       </div>
-
-      <Pricing/>
-      
+      <div id='pricing'>
+        <Pricing/>
+      </div>
       <Faq/>
       <Footer/>
 

@@ -28,25 +28,18 @@ export default function NavBar({
       <Link href='/' className="font-extrabold text-1xl md:text-2xl ">
         IMAGE EFFECTS
       </Link>
-      <div className="flex flex-col items-center md:flex-row">
-        <div className="md:hidden">
-          <RiMenu5Fill size={35} className="text-teal-700 cursor-pointer " onClick={toggleMenu} />
-        </div>
-        <div className={`flex flex-col md:space-x-10 md:flex-row md:items-center absolute md:static top-full right-0  md:bg-transparent z-50 md:z-auto ${isMenuOpen ? 'block' : 'hidden'} md:flex`}>
-          <Link className=" hover:text-teal-700" href='/history'>
-            History
-          </Link>
+
+        
+        <div className={"flex flex-row just space-x-2  "}>
+
           <div className=" hover:text-teal-700" >
             <DashboardLink session={session} />
           </div>
-          <Link className=" hover:text-teal-700" href='/pricing'>
-            Pricing
-          </Link>
-          <div className="px-1">
+          <div className="">
             <AuthButton session={session} />
           </div>
         </div>
-      </div>
+
     </nav>
   );
 }
