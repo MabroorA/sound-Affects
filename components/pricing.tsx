@@ -15,34 +15,80 @@ interface Plan {
     price: string;
     priceId: string;
   }
-  const plans: { [key: string]: Plan[] } = {
-    monthly: [
-      {
-        link:
-          process.env.NODE_ENV === 'development'
-            ? 'https://buy.stripe.com/test_14k7uPcjK5bGdfG7sv'
-            : '',
-        price: '£9.99',
-        priceId:
-          process.env.NODE_ENV === 'development'
-            ? 'price_1POpsyRqLyEgrrLVhWeonU9Z'
-            : '',
-      }
-    ],
-    yearly: [
-      {
-        link:
-          process.env.NODE_ENV === 'development'
-            ? 'https://buy.stripe.com/test_cN2eXhdnOfQka3u3cg'
-            : '',
-        price: '£12.99',
-        priceId:
-          process.env.NODE_ENV === 'development'
-            ? 'price_1PXA7LRqLyEgrrLVPYqpgQfU'
-            : '',
-      }
-    ]
-  };
+const plans: { [key: string]: { [key: string]: Plan } } = {
+    starter: {
+        monthly: {
+            link:
+                process.env.NODE_ENV === 'development'
+                    ? 'https://buy.stripe.com/test_aEU16r83u6fKcbCbII'
+                    : '',
+            price: '£12.99',
+            priceId:
+                process.env.NODE_ENV === 'development'
+                    ? 'price_1POpsyRqLyEgrrLVhWeonU9Z'
+                    : '',
+        },
+        yearly: {
+            link:
+                process.env.NODE_ENV === 'development'
+                    ? 'https://buy.stripe.com/test_cN2eXhdnOfQka3u3cg'
+                    : '',
+            price: '£9.99',
+            priceId:
+                process.env.NODE_ENV === 'development'
+                    ? 'price_1PXA7LRqLyEgrrLVPYqpgQfU'
+                    : '',
+        },
+    },
+    pro: {
+        monthly: {
+            link:
+                process.env.NODE_ENV === 'development'
+                    ? 'https://buy.stripe.com/test_bEU16r83u6fKcbCbII'
+                    : '',
+            price: '£24.99',
+            priceId:
+                process.env.NODE_ENV === 'development'
+                    ? 'price_1POpsyRqLyEgrrLVhWeonU9Z'
+                    : '',
+        },
+        yearly: {
+            link:
+                process.env.NODE_ENV === 'development'
+                    ? 'https://buy.stripe.com/test_7sI16r83udIc7Vm4gl'
+                    : '',
+            price: '£19.99',
+            priceId:
+                process.env.NODE_ENV === 'development'
+                    ? 'price_1PXTgFRqLyEgrrLVeZXfbjAI'
+                    : '',
+        },
+    },
+    premium: {
+        monthly: {
+            link:
+                process.env.NODE_ENV === 'development'
+                    ? 'https://buy.stripe.com/test_cEU16r83u6fKcbCbII'
+                    : '',
+            price: '£34.99',
+            priceId:
+                process.env.NODE_ENV === 'development'
+                    ? 'price_1POpsyRqLyEgrrLVhWeonU9Z'
+                    : '',
+        },
+        yearly: {
+            link:
+                process.env.NODE_ENV === 'development'
+                    ? 'https://buy.stripe.com/test_fN2eXhdnOfQka3u3cg'
+                    : '',
+            price: '£39.99',
+            priceId:
+                process.env.NODE_ENV === 'development'
+                    ? 'price_1PXA7LRqLyEgrrLVPYqpgQfU'
+                    : '',
+        },
+    },
+};
 
 export default function Pricing() {
     // const session = await auth();
@@ -115,7 +161,7 @@ export default function Pricing() {
                     </p>
 
                 </div>
-                <Link href={`${plans[planType][0].link}`}>
+                <Link href={plans.starter[planType].link}>
                     <Button className="w-full px-4 text-2xl font-medium text-white bg-teal-500 md:min-w-64">Buy now</Button>
                 </Link>
             </div>
@@ -151,10 +197,11 @@ export default function Pricing() {
                     </p>
 
                 </div>
-                
-                <Button className="w-full px-4 text-2xl font-medium text-white bg-gradient-to-r from-teal-300 to-violet-600 hover:from-purple-600 hover:to-purple-700 md:min-w-64">
-                    Buy now
-                </Button>
+                <Link href={plans.pro[planType].link}>
+                  <Button className="w-full px-4 text-2xl font-medium text-white bg-gradient-to-r from-teal-300 to-violet-600 hover:from-purple-600 hover:to-purple-700 md:min-w-64">
+                      Buy now
+                  </Button>
+                </Link>
             </div>
             
             {/* PREMIUM CARD */}
@@ -186,7 +233,7 @@ export default function Pricing() {
                     </p>
 
                 </div>
-                <Link href={`${plans[planType][0].link}`}>
+                <Link href={plans.premium[planType].link}>
                     <Button className="w-full px-4 text-2xl font-medium text-white bg-teal-500 md:min-w-64">Buy now</Button>
                 </Link>
             </div>
