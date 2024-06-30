@@ -20,9 +20,9 @@ interface Plan {
       {
         link:
           process.env.NODE_ENV === 'development'
-            ? 'https://buy.stripe.com/test_aEU16r83u6fKcbCbII'
+            ? 'https://buy.stripe.com/test_14k7uPcjK5bGdfG7sv'
             : '',
-        price: '£12.99',
+        price: '£9.99',
         priceId:
           process.env.NODE_ENV === 'development'
             ? 'price_1POpsyRqLyEgrrLVhWeonU9Z'
@@ -33,12 +33,12 @@ interface Plan {
       {
         link:
           process.env.NODE_ENV === 'development'
-            ? 'https://buy.stripe.com/test_aEU16r83u6fKcbCbII'
+            ? 'https://buy.stripe.com/test_cN2eXhdnOfQka3u3cg'
             : '',
-        price: '£9.99',
+        price: '£12.99',
         priceId:
           process.env.NODE_ENV === 'development'
-            ? 'price_1POpsyRqLyEgrrLVhWeonU9Z'
+            ? 'price_1PXA7LRqLyEgrrLVPYqpgQfU'
             : '',
       }
     ]
@@ -60,26 +60,26 @@ export default function Pricing() {
         <div className='p-6 text-5xl font-black text-teal-800'>
             Pricing
         </div>
-        <h1  className='text-3xl font-bold md:text-4xl '>Save precious time from finding the perfect sound</h1>
-        <h3 className='py-4 md:py-8' >
+        <h1  className='py-4 text-3xl font-bold md:text-4xl '>Save precious time from finding the perfect sound</h1>
+        {/* <h3 className='py-4 md:py-8' >
             <span className='font-medium text-teal-500'>Save 20% </span> Extra with a yearly plan  
-        </h3>
+        </h3> */}
 
         {/* Switch from yearly to monthly */}
         <div className="space-x-2">
         <Button
           variant="outline"
-          className={` ${planType === "monthly" ? "bg-teal-500 text-white" : "border border-black"} `}
+          className={` ${planType === "monthly" ? "bg-teal-500 text-white" : "border border-black"} rounded-3xl `}
           onClick={() => togglePlanType("monthly")}
         >
           Monthly
         </Button>
         <Button
           variant="outline" 
-          className={` ${planType === "yearly" ? "bg-teal-500 text-white" : "border border-black"} `}
+          className={` ${planType === "yearly" ? "bg-teal-500 text-white" : "border border-black"} rounded-3xl`}
           onClick={() => togglePlanType("yearly")}
         >
-          Yearly
+          Yearly <span className="text-sm text-black "> (save 25%)</span>
         </Button>
       </div>
         {/* PRICING CARDS */}
