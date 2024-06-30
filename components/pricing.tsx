@@ -1,39 +1,58 @@
+"use client";
 import Link from "next/link";
 import { Button } from "./ui/button";
 
 
 import { Check,X } from "@phosphor-icons/react/dist/ssr";
 import { auth } from "@/lib/auth";
+import { useState } from "react";
 
 
 
-export const plans = [
-    {
+interface Plan {
+    link: string;
+    price: string;
+    priceId: string;
+  }
+  const plans: { [key: string]: Plan[] } = {
+    monthly: [
+      {
         link:
-            process.env.NODE_ENV === 'development'
-                ? 'https://buy.stripe.com/test_aEU16r83u6fKcbCbII'
-                : '',
+          process.env.NODE_ENV === 'development'
+            ? 'https://buy.stripe.com/test_aEU16r83u6fKcbCbII'
+            : '',
+        price: '£12.99',
         priceId:
-            process.env.NODE_ENV === 'development'
+          process.env.NODE_ENV === 'development'
             ? 'price_1POpsyRqLyEgrrLVhWeonU9Z'
             : '',
-    }
-    // second plan
-    // {
-    //     link:
-    //         process.env.NODE_ENV === 'production'
-    //             ? 'https://buy.stripe.com/test_aEU16r83u6fKcbCbII'
-    //             : '',
-    //     priceId:
-    //         process.env.NODE_ENV === 'production'
-    //         ? 'price_1POpsyRqLyEgrrLVhWeonU9Z'
-    //         : '',
-    // }
-];
+      }
+    ],
+    yearly: [
+      {
+        link:
+          process.env.NODE_ENV === 'development'
+            ? 'https://buy.stripe.com/test_aEU16r83u6fKcbCbII'
+            : '',
+        price: '£9.99',
+        priceId:
+          process.env.NODE_ENV === 'development'
+            ? 'price_1POpsyRqLyEgrrLVhWeonU9Z'
+            : '',
+      }
+    ]
+  };
 
-export default async function Pricing() {
+export default function Pricing() {
     // const session = await auth();
     // const user_email = session?.user?.email
+
+    const [planType, setPlanType] = useState<"monthly" | "yearly">("yearly");
+
+  const togglePlanType = (type: "monthly" | "yearly") => {
+    setPlanType(type);
+  };
+
   return (
     <>
     <div className='flex flex-col justify-center text-center text-black '>
@@ -44,6 +63,22 @@ export default async function Pricing() {
         <h3 className='py-4 md:py-8' >
             <span className='font-medium text-teal-500'>Save 20% </span> Extra with a yearly plan  
         </h3>
+
+        {/* Switch from yearly to monthly */}
+        <div className="space-x-2">
+        <Button 
+          className={` ${planType === "monthly" ? "bg-teal-500 text-white" : ""}`}
+          onClick={() => togglePlanType("monthly")}
+        >
+          Monthly
+        </Button>
+        <Button 
+          className={` ${planType === "yearly" ? "bg-teal-500 text-white" : ""}`}
+          onClick={() => togglePlanType("yearly")}
+        >
+          Yearly
+        </Button>
+      </div>
         {/* PRICING CARDS */}
         <div className='flex flex-col justify-center pb-12 space-y-4 md:space-y-0 md:justify-around md:flex-row md:w-full'>
 
@@ -52,7 +87,9 @@ export default async function Pricing() {
                 <h4 className="text-teal-500">Starter</h4>
                 <div className="flex flex-row">
                     {/* <p className="mt-6 text-gray-400 line-through">£39.99</p> */}
-                    <h1 className='text-4xl font-black text-white md:text-5xl bg-inherit'>£9.99</h1>
+                    <h1 className='text-4xl font-black text-white md:text-5xl bg-inherit'>
+                    {planType === "yearly" ? "£9.99" : "£12.99"}
+                    </h1>
                 </div>
                 <div className="py-4 text-white">
                     <p className="flex flex-row items-center py-3">
@@ -74,7 +111,7 @@ export default async function Pricing() {
                     </p>
 
                 </div>
-                <Link href={`${plans[0].link}?`}>
+                <Link href={`${plans[planType][0].link}`}>
                     <Button className="w-full px-4 text-2xl font-medium text-white bg-teal-500 md:min-w-64">Buy now</Button>
                 </Link>
             </div>
@@ -84,7 +121,9 @@ export default async function Pricing() {
                 <h4 className="text-teal-500">Pro</h4>
                 <div className="flex flex-row">
                     <p className="mt-6 text-gray-400 line-through">29.99</p>
-                    <h1 className='text-4xl font-black text-teal-300 md:text-5xl bg-inherit'>£19.99</h1>
+                    <h1 className='text-4xl font-black text-teal-300 md:text-5xl bg-inherit'>
+                    {planType === "yearly" ? "£19.99" : "£24.99"}
+                    </h1>
                 </div>
                 <div className="py-4 text-white">
                    
@@ -108,7 +147,9 @@ export default async function Pricing() {
 
                 </div>
                 
-                <Button className="w-full px-4 text-2xl font-medium text-white bg-gradient-to-r from-teal-300 to-violet-600 hover:from-purple-600 hover:to-purple-700 md:min-w-64">Buy now</Button>
+                <Button className="w-full px-4 text-2xl font-medium text-white bg-gradient-to-r from-teal-300 to-violet-600 hover:from-purple-600 hover:to-purple-700 md:min-w-64">
+                    Buy now
+                </Button>
             </div>
 
         </div>
