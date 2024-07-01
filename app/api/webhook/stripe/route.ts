@@ -1,4 +1,4 @@
-import { plans } from "@/components/pricing";
+import { plans } from "@/components/plans";
 import { auth } from "@/lib/auth";
 import prisma from "@/lib/db"
 import { stripe } from "@/lib/stripe";
@@ -9,16 +9,16 @@ import Stripe from "stripe";
 
 // Function to find plan and type based on stripePriceId
 function findPlanAndType(plans: { [key: string]: { [key: string]: any } }, stripePriceId: string): { plan: string, type: string } | null {
-    for (const planKey of Object.keys(plans)) {
-        const plan = plans[planKey];
-        for (const typeKey of Object.keys(plan)) {
-            const subscriptionType = plan[typeKey];
-            if (subscriptionType.priceId === stripePriceId) {
-                return { plan: planKey, type: typeKey };
-            }
-        }
-    }
-    return null; // Return null if stripePriceId is not found in plans
+     for (const planKey of Object.keys(plans)) {
+         const plan = plans[planKey];
+         for (const typeKey of Object.keys(plan)) {
+             const subscriptionType = plan[typeKey];
+             if (subscriptionType.priceId === stripePriceId) {
+                 return { plan: planKey, type: typeKey };
+             }
+         }
+     }
+     return null; // Return null if stripePriceId is not found in plans
 }
 
 
@@ -71,7 +71,7 @@ export async function POST(req:any){
                     if (checkoutSession.customer) {
                          const customerId = checkoutSession.customer as string;
                          const customer = await stripe.customers.retrieve(customerId);
-                         console.log("CUSTOMER ID", customerId);
+                         // console.log("CUSTOMER ID", customerId);
                          // console.log("CUSTOMER", customer);
                        } else {
                          console.log("No customer associated with this session.");
@@ -94,11 +94,11 @@ export async function POST(req:any){
                     const stripe_priceId = lineItems[0].price.id;
                     console.log("Price ID:", stripe_priceId);
                     
-                    console.log("Plans Object:", plans);
+                    console.log(plans.starter.monthly.price);
                     // Match the priceId with the plan from your pricing configuration
                     let planName = "";
                     let planType = "";
-
+                    
                     const foundPlanAndType = findPlanAndType(plans, stripe_priceId);
                     
                     if (foundPlanAndType) {
@@ -123,18 +123,23 @@ export async function POST(req:any){
                     };
 
                     const planKey = `${planName}-${planType}`;
-                    const credits = planCredits[planKey] || 0;
+                    const credits_added = planCredits[planKey] || 0;
 
+                    console.log(planKey)
+                    console.log(credits_added)
+
+                    console.log(userEmail)
                     // Update user data with the plan type and credits
                     const updatedUser = await prisma.user.update({
                          where: { email: userEmail },
                          data: {
-                         credits: { increment: credits },
-                         plan: planName,
-                         planType: planType,
+                              credits:  credits_added,
+                              plan: planName || undefined,
+                              planType: planType || undefined,
                          },
                     });
                     
+
                     if (!updatedUser) {
                          console.error("User not found");
                          return new NextResponse("User not found", { status: 404 });
