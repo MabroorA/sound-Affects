@@ -14,8 +14,9 @@ interface Plan {
     link: string;
     price: string;
     priceId: string;
-  }
-const plans: { [key: string]: { [key: string]: Plan } } = {
+}
+
+export const plans: { [key: string]: { [key: string]: Plan } } = {
     starter: {
         monthly: {
             link:
